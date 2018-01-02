@@ -25,14 +25,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     
     <script>
+       
         $(document).ready(function() {
-            var i;
-            var title = "這是一個示範留言串";
-            var date = '12/24';
+          var i;
+          var title = "這是一個示範留言串";
+          var date = '12/24';
+          for(i = 0 ;i < 10 ; i++) {
+			    	$(".title").append( '<div><h4 style="margin-top:50px;"><a href="./message_files/messageInfo.html" style="color:white;text-decoration:underline;">' + title + '</a></h4></div>');   
+            $(".title").append( '<div class="date" style="color:white;"><p>' + date +'</p></div>');             
+          }
+          $(".viewMore").click(function(){
             for(i = 0 ;i < 10 ; i++) {
-				$(".title").append( '<div><h4 style="margin-top:50px;"><a href="./message_files/messageInfo.html" style="color:white;text-decoration:underline;">' + title + '</a></h4></div>');   
-                $(".title").append( '<div class="date" style="color:white;"><p>' + date +'</p></div>');             
-            }
+			      	$(".title").append( '<div><h4 style="margin-top:50px;"><a href="./message_files/messageInfo.html" style="color:white;text-decoration:underline;">' + title + '</a></h4></div>');   
+              $(".title").append( '<div class="date" style="color:white;"><p>' + date +'</p></div>');             
+           }            
+          });
+          
         });
 
     </script>
@@ -80,10 +88,7 @@
   </section>
 
   <div class="text-center">
-    <a href="message.html"
-        <button type="button" class="btn btn-info " style="margin:50px 0px 20px 0px;">上一頁</button></a>
-    <a href="message.html"
-    <button type="button" class="btn btn-info " style="margin:50px 0px 20px 0px;">下一頁</button></a>
+      <button type="button" class="viewMore btn btn-info " style="margin:50px 0px 20px 0px;">view more</button>
   </div>
 
 
