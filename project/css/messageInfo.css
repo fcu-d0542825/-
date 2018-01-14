@@ -1,0 +1,46 @@
+#title {
+    border:5px rgb(0, 0, 0) solid;
+    margin-top:50px;
+}
+.message-title {
+    color:black;
+    border-bottom:3px rgb(0, 0, 0) solid;
+    font-size:140%;
+}
+.message-desc {
+    color:black;
+    font-size:80%;    
+    word-wrap:break-word;    
+    border-top:2px rgb(0, 0, 0) solid;  
+    padding-bottom:20px; 
+    padding-top:10px; 
+}
+.message-time {
+    color:black;
+    font-size:80%;        
+}
+.message-name {
+    color:black;
+    letter-spacing: 3px;
+}
+#reply {
+    margin-top:50px;
+}
+.reply-name {
+    color:rgb(0, 0, 0);
+    letter-spacing: 3px;   
+    font-size:120%;            
+}
+.reply-desc {  
+    color:rgba(0, 0, 0, 0.616);
+    font-size:140%;   
+    word-wrap:break-word;    
+}
+.reply-time {
+    float: right;
+    color:black;
+    font-size:140%;   
+}
+.reply-box {
+    margin-top:15px;
+}

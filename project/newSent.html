@@ -28,29 +28,7 @@
 
   <!-- -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="./js/account.js"></script>
-
-  <script>
-
-    $(document).ready(function () {
-      var i;
-      var title = "這是一個示範留言串";
-      var date = '12/24';
-      for (i = 0; i < 10; i++) {
-        $(".title").append('<div><h4 style="margin-top:50px;"><a href="./message_files/messageInfo.html" style="color:black; text-decoration:underline;">' + title + '</a></h4></div>');
-        $(".title").append('<div class="date" ><p>' + date + '</p></div>');
-      }
-      $(".viewMore").click(function () {
-        for (i = 0; i < 10; i++) {
-          $(".title").append('<div><h4 style="margin-top:50px;"><a href="./message_files/messageInfo.html" style="color:black; text-decoration:underline;">' + title + '</a></h4></div>');
-          $(".title").append('<div class="date" ><p>' + date + '</p></div>');
-        }
-      });
-
-    });
-
-  </script>
-
+  <script src="./js/newSent.js"></script>
 
 </head>
 
@@ -80,24 +58,23 @@
             <a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="">當地介紹</a>
           </li>
 
-
         </ul>
       </div>
     </div>
   </nav>
 
-  <!--標題-->
-  <section class="container">
-    <div class="title">
-    </div>
-  </section>
 
-  <div class="text-center">
-    <button type="button" class="viewMore btn btn-info " style="margin:50px 0px 20px 0px;">view more</button>
-  </div>
-  <a href="./newSent.html">
-  <button type="button"  class="btn btn-info" style="position:fixed;bottom:50px; right:20px; margin:50px 0px 20px 0px;">發文</button>
-  </a>
+  <section class="container text-center " style="  margin-top:60px;">
+        <h2 class="text-center text-uppercase ">發 文</h2>
+        <form >
+            <label style="margin-top:40px;">標題</label>
+            <input type="text" class="col-sm-10 col-md-6 col-lg-6 col-xl-6" id ="title" style="border:5px rgb(0, 0, 0) solid;">
+            <br>
+            <label>內文</label>
+            <textarea id="comment" class="col-sm-10 col-md-6 col-lg-6 col-xl-6" rows="4" style="margin-top:10px; border:5px rgb(0, 0, 0) solid;"></textarea><br>
+            <button id="submit" type="button" class="btn btn-success " style="margin-top:20px;">送 出</button>
+        </form>
+    </section>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
