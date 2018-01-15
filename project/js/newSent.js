@@ -51,18 +51,20 @@ $(document).ready(function () {
                             'title': title,
                         },
                         success: function (data) {
-                            $.ajax({
-                                type: 'GET',
-                                url:'./php/sentNext.php',
-                                dataType:'json',
-                                data:{
+                                $.ajax({
+                                    type: 'GET',
+                                    url:'./php/sentNext.php',
+                                    dataType:'json',
+                                    data:{
 
-                                },            
-                                success: function(data) {
-                                    var next = './message_files/' + data;
-                                    document.location.href = next;
-                                }
-                            });
+                                    },            
+                                    success: function(data) {
+                                        var fileName = data;
+                                        var next = './message_files/' + fileName;
+                                        document.location.href = next;
+                                    }
+                                });                                
+                            //document.location.href = next;
                             alert("跳轉到下一個頁面");
                         },
                         error: function (data) {

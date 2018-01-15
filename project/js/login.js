@@ -36,7 +36,8 @@ $(document).ready(function () {
                         success: function (account) {
                             if (account == user) {
                                 alert('歡迎' + user);
-                                document.location.href = "./Home.html";
+                                //document.location.href = "./Home.html";
+                                history.go(-1);
                             }
                             else {
                                 alert("帳號或密碼錯誤");

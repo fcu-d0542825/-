@@ -5,21 +5,18 @@
 
     $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    } 
+    $username = $_SESSION['username'];
 
-    $tableName = $conn->real_escape_string($_POST['title']);
-
-    $sql = "SELECT * FROM message where title = '$tableName'";
-
+    $sql = "SET NAMES 'UTF8'";
+    $conn->query($sql);
+    $sql = "SELECT * FROM message where username = '$username' ORDER BY no DESC";
     $result = $conn->query($sql);
-
     $row = mysqli_fetch_array($result);
 
-    $num =  $row[0];
+    $num = $row['no'];
     $fileName = $num.'comment';
-
+    $tableName = $row['title'];
+    
     $sql = "CREATE TABLE tableName (
         title TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL , 
         username TEXT NOT NULL,
@@ -31,7 +28,7 @@
     $conn->query($sql);
 
     $fileName = $fileName.'.html';
-
+    $_SESSION['sendNext'] = $fileName;
     //建立一文字檔名稱 
     $fcreat = fopen($fileName,'w+');
 
@@ -49,5 +46,5 @@
     }
     fclose($fcreat);
 
-    $_SESSION['sendNext'] = $fileName;
+
 ?>
