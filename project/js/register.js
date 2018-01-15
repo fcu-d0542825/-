@@ -7,8 +7,8 @@ $(document).ready(function () {
         },
         success: function (account) {            
             if (account != "NULL") {
-                alert("您已登入\n將轉至首頁");
-                document.location.href = "./Home.html";
+                alert("您已登入\n回上一頁");
+                history.go(-2);
             }
         }
     });
@@ -51,8 +51,8 @@ $(document).ready(function () {
                                         'email': $('#email').val(),
                                     },
                                 });
-                                alert("註冊完成!\n跳轉到主頁");
-                                document.location.href = "./Home.html";
+                                alert("註冊完成!\n跳轉至上一頁");
+                                history.go(-1);
                             }
                             else {
                                 alert("帳號已被使用!");

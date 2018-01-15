@@ -9,8 +9,8 @@ $(document).ready(function () {
         },
         success: function (account) {            
             if (account != "NULL") {
-                alert("您已登入\n將轉至首頁");
-                document.location.href = "./Home.html";
+                alert("您已登入\n將轉至上一頁");
+                history.go(-1);
             }
         }
     });
