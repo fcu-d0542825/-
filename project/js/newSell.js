@@ -19,11 +19,14 @@ $(document).ready(function () {
         }
     });
 
-    //發文
+    //發送
     $('#submit').click(function () {
         title = $('#title').val();
         comment = $('#comment').val();
-        if (title != '' && comment != '') {
+        wanted = $('#wanted').val();
+        imgSrc = $('#imgSrc').val();
+
+        if (title != '' && comment != '' && imgSrc != '' && wanted != '') {
             var d = new Date()
             var vYear = d.getFullYear()
             var vMon = d.getMonth() + 1
@@ -34,18 +37,20 @@ $(document).ready(function () {
 
             $.ajax({
                 type: 'POST',
-                url: './php/newSent.php',
+                url: './php/newSell.php',
                 dataType: 'text',
                 data: {
                     'username': user,
                     'title': title,
                     'comment': comment,
                     'date': date,
+                    'imgSrc': imgSrc,
+                    'wanted': wanted,
                 },
                 success: function (data) {
                     $.ajax({
                         type: 'POST',
-                        url: './message_files/comentTable.php',
+                        url: './sell_files/sellTable.php',
                         dataType: 'text',
                         data: {
                             'title': title,
@@ -53,14 +58,14 @@ $(document).ready(function () {
                         success: function (data) {
                                 $.ajax({
                                     type: 'GET',
-                                    url:'./php/sentNext.php',
+                                    url:'./php/sellNext.php',
                                     dataType:'json',
                                     data:{
 
                                     },            
                                     success: function(data) {
                                         var fileName = data;
-                                        var next = './message_files/' + fileName;
+                                        var next = './sell_files/' + fileName;
                                         document.location.href = next;
                                     }
                                 });                                
@@ -70,7 +75,7 @@ $(document).ready(function () {
                         error: function (data) {
                             alert("失敗");
                         }
-                    });               
+                    });          
                     alert("發文成功");
 
                 },
@@ -81,11 +86,13 @@ $(document).ready(function () {
             });            
         }
         else {
-            alert('標題或內文請勿空白。');
+            alert('欄位請勿空白。');
         }
+    });
 
+    $("#imgSrc").blur(function(){
+        $("#preImg").attr("src",$('#imgSrc').val());
     });
 
 
-    
 });

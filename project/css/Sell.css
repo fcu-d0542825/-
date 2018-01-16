@@ -1,0 +1,16 @@
+.box { 
+    margin-left:10px;
+    margin-top:50px;
+    padding-top:15px;
+    background-color:rgb(163, 212, 240); 
+    max-height:250px; 
+    border-bottom:1px rgb(0, 0, 0) dashed;
+}
+.img {
+    overflow:hidden; 
+    max-height:180px;
+}
+.sellTitle {
+    color:black;
+    word-wrap:break-word;
+}

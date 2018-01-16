@@ -9,32 +9,32 @@
 
     $sql = "SET NAMES 'UTF8'";
     $conn->query($sql);
-    $sql = "SELECT * FROM message where username = '$username' ORDER BY no DESC";
+    $sql = "SELECT * FROM sell where username = '$username' ORDER BY no DESC";
     $result = $conn->query($sql);
     $row = mysqli_fetch_array($result);
 
     $num = $row['no'];
-    $fileName = $num.'comment';
+    $fileName = $num.'sell';
     $tableName = $row['title'];
     
     $sql = "CREATE TABLE tableName (
-        title TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL , 
-        username TEXT NOT NULL,
-        comment TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
-        date TEXT NOT NULL,
-        fileName TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL 
+            username TEXT NOT NULL,
+            comment TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
+            date TEXT NOT NULL,
+            sellTitle TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+            fileName TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL             
         )";
 
     $sql = str_replace("tableName",$fileName,$sql);
     $conn->query($sql);
 
     $fileName = $fileName.'.html';
-    $_SESSION['sendNext'] = $fileName;
+    $_SESSION['sellNext'] = $fileName;
     //建立一文字檔名稱 
     $fcreat = fopen($fileName,'w+');
 
 
-    $x = file('./messageInfo.html');
+    $x = file('./sellInfo.html');
     print_r($x);
 
     $htmlTitle = '<title>';

@@ -1,0 +1,30 @@
+#title {
+    /**border:5px rgb(0, 0, 0) solid;*/
+    margin-top:10px;
+    background-color:rgb(102, 171, 211);
+
+}
+.message-title {
+    color:black;
+    border-bottom:1px rgb(0, 0, 0) dashed;
+    font-size:140%;
+}
+.message-desc {
+    color:black;
+    font-size:100%;    
+    word-wrap:break-word;    
+    border-top:1px rgb(0, 0, 0) dashed;  
+    padding-bottom:20px; 
+}
+.message-time {
+    color:black;  
+    border-top:1px rgb(0, 0, 0) dashed;     
+}
+.message-name {
+    color:black;
+    /*letter-spacing: 3px;*/
+}
+.message-wanted {
+    color:black;
+    border-top:1px rgb(0, 0, 0) dashed;  
+}
