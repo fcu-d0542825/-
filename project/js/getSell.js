@@ -56,7 +56,7 @@ $(document).ready(function () {
                                     success: function (email) {
                                         for (i = 0; i < emailLength ; i++) {
                                             if (email[i].username.search(username) != -1) {
-                                                $(".replyForm").append('<a href="mailto:' + email[i].email + '><button id="email" type="button" class="btn btn-success " style="margin-top:20px;margin-left:20px;">聯絡賣家</button></a>');
+                                                $(".replyForm").append('<a href="mailto:' + email[i].email + '"><button id="email" type="button" class="btn btn-success " style="margin-top:20px;margin-left:20px;">聯絡賣家</button></a>');
                                                 break;
                                             }
                                         }
