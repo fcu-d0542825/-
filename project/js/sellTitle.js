@@ -2,7 +2,7 @@ $(document).ready(function() {
     var message;
     $.ajax({
         type: 'GET',
-        url:'./php/sellLength.php',
+        url:'./php/sellLength2.php',
         dataType:'json',
         length:{
 
@@ -10,7 +10,7 @@ $(document).ready(function() {
         success: function(length) {
             $.ajax({
                 type: 'GET',
-                url:'./php/sellTitle.php',
+                url:'./php/sellTitle2.php',
                 dataType:'json',
                 data:{
 

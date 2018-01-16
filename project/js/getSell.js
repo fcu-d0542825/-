@@ -83,7 +83,7 @@ $(document).ready(function () {
                                     },
                                     success: function (own) {
                                         for (i = length - 1; i >= 0; i--) {
-                                            $("#sellTitle").append('<option value="' + own[i].no + 'sell">' + own[i].title + '</option>');
+                                            $("#sellTitle").append('<option id="'+  own[i].no + 'sell" value="' + own[i].no + 'sell">' + own[i].title + '</option>');
                                         }
 
                                         //
@@ -94,7 +94,8 @@ $(document).ready(function () {
                                                 var username = $("#userName").text();
                                                 var comment = $('#comment').val();
                                                 var fileName = $('#sellTitle').val();
-                                                var title = $('#sellTitle').text();
+                                                var title = $('#' + fileName).text();
+                                                alert(title);
                                                 var d = new Date()
                                                 var vYear = d.getFullYear()
                                                 var vMon = d.getMonth() + 1
