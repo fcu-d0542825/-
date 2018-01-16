@@ -46,7 +46,6 @@ if ($id != null && $pw != null && $row[0] == $id && $row[1] == $pw)
 else
 
 {
-
         echo '登入失敗!';
         echo '<meta http-equiv=REFRESH CONTENT=1;url=index.php>';
 

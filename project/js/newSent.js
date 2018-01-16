@@ -9,13 +9,17 @@ $(document).ready(function () {
         success: function (account) {
             if (account != "NULL") {
                 user = account;
-                var information = '<li class="nav-item mx-0 mx-lg-1" id="userName"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="">' + user + '</a></li>';
+                var information = '<li class="nav-item mx-0 mx-lg-1" id="userName"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="./user.html">' + user + '</a></li>';
                 $(".navbar-nav").append(information);
             }
             else {
                 alert("請先登入");
                 document.location.href = "./Login.html";
             }
+        },
+        error: function() {
+            alert("請先登入");
+            document.location.href = "./Login.html";           
         }
     });
 
@@ -75,7 +79,6 @@ $(document).ready(function () {
 
                 },
                 error: function (data) {
-                    console.log(data)
                     alert("失敗");
                 }
             });            

@@ -24,6 +24,9 @@ $(document).ready(function() {
                     }
                 }
             }); 
+        },
+        error: function(length) {
+            alert('網路連線問題');
         }
     });
 

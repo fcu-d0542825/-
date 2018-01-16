@@ -10,9 +10,6 @@
     // Perform queries and print out affected rows
     mysqli_query($conn,"SELECT * FROM sell");
     $request_length = mysqli_affected_rows($conn);
-
-    mysqli_query($conn,"SELECT * FROM sell where username =''");
-    $request_length = $request_length - mysqli_affected_rows($conn);
     echo $request_length;
     mysqli_close($conn);
 ?>

@@ -1,7 +1,5 @@
 $(document).ready(function () {
-    alert('123');
     $('#submit').click(function() {
-        alert('123');
         var username = $("#userName").text();
         var comment = $('#comment').val();
         var fileName = $('#sellTime').val();

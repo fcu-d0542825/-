@@ -15,9 +15,11 @@ $(document).ready(function () {
             else {
                 alert("請先登入\n轉至登入頁面");
                 document.location.href = "./Login.html";
-                var login = '<li class="nav-item mx-0 mx-lg-1" id="login"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger" href="Login.html">登入</a></li>';
-                $(".navbar-nav").append(login);
             }
+        },
+        error: function(account) {
+            alert("請先登入\n轉至登入頁面");
+            document.location.href = "./Login.html";
         }
     });
 });

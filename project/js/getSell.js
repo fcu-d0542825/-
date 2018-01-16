@@ -95,7 +95,6 @@ $(document).ready(function () {
                                                 var comment = $('#comment').val();
                                                 var fileName = $('#sellTitle').val();
                                                 var title = $('#' + fileName).text();
-                                                alert(title);
                                                 var d = new Date()
                                                 var vYear = d.getFullYear()
                                                 var vMon = d.getMonth() + 1
